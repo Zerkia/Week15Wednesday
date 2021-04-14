@@ -9,6 +9,7 @@ public class StudentMain {
 
   void run(){
     karl.setGrades(giveGrades());
+    System.out.println(karl);
   }
 
   public int[] giveGrades(){
