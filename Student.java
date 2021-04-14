@@ -28,10 +28,6 @@ public class Student {
     this.grades = grades;
   }
 
-  public static int[] getGradeCurve() {
-    return Arrays.copyOf(gradeCurve, gradeCurve.length);
-  }
-
   @Override
   public String toString() {
     return "Name: " + name + "\n" +

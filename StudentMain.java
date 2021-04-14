@@ -18,16 +18,21 @@ public class StudentMain {
 
     System.out.println("Kan kun modtage -3, 00, 2, 4, 7, 10 og 12");
     int input = 0;
+    boolean valid = false;
 
     for (int i = 0; i < temp.length; i++) {
-      for (int j = 0; j < Student.getGradeCurve().length; j++) {
-        while (!Student.getGradeCurve().equals(input)) {
-          System.out.println("Kan kun modtage -3, 00, 2, 4, 7, 10 og 12");
-          input = sc.nextInt();
+      valid = false;
+      while (!valid) {
+        input = sc.nextInt();
+        switch (input) {
+          case -3, 0, 2, 4, 7, 10, 12:
+            temp[i] = input;
+            valid = true;
+            break;
+          default:
+            System.out.println("Kan kun modtage -3, 00, 2, 4, 7, 10 og 12");
         }
       }
-      //input = sc.nextInt();
-      temp[i] = input;
     }
    return temp;
   }
