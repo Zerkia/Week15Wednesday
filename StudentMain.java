@@ -13,7 +13,7 @@ public class StudentMain {
 
   public int[] giveGrades() {
 
-    int[] temp = new int[7];
+    int[] temp = new int[8];
     Scanner sc = new Scanner(System.in);
     System.out.println("Kan kun modtage -3, 00, 2, 4, 7, 10 og 12");
     int input = 0;
@@ -34,8 +34,8 @@ public class StudentMain {
       }
     }
 
-    int writtenGrade = temp[5];
-    int vocalGrade = temp[6];
+    int writtenGrade = temp[6];
+    int vocalGrade = temp[7];
     double totalGrade = ((vocalGrade * 0.75) + (writtenGrade * 0.25));
 
     if (totalGrade <= -3 ) {
@@ -54,7 +54,7 @@ public class StudentMain {
       totalGrade = 12;
     }
 
-    temp[5] = (int) totalGrade;
+    temp[6] = (int) totalGrade;
     int[] temp2 = Arrays.copyOf(temp, temp.length-1);
 
     return temp2;
