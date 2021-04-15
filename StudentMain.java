@@ -33,9 +33,11 @@ public class StudentMain {
         }
       }
     }
+
     int writtenGrade = temp[5];
     int vocalGrade = temp[6];
     double totalGrade = ((vocalGrade * 0.75) + (writtenGrade * 0.25));
+
     if (totalGrade <= -3 ) {
       totalGrade = -3;
     } else if (totalGrade >= -3 && totalGrade <= 00){
@@ -51,8 +53,10 @@ public class StudentMain {
     }else if (totalGrade >= 10 && totalGrade <= 12) {
       totalGrade = 12;
     }
-      temp[5] = (int) totalGrade;
-   int[] temp2 = Arrays.copyOf(temp, temp.length-1);
+
+    temp[5] = (int) totalGrade;
+    int[] temp2 = Arrays.copyOf(temp, temp.length-1);
+
     return temp2;
   }
 
