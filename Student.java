@@ -24,6 +24,10 @@ public class Student {
     this.grades = grades;
   }
 
+  public int[] getGrades() {
+    return grades;
+  }
+
   @Override
   public String toString() {
     return "Name: " + name + "\n" +

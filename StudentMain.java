@@ -1,5 +1,6 @@
 package Week15Wednesday;
 
+import java.util.Arrays;
 import java.util.Scanner;
 
 public class StudentMain {
@@ -8,19 +9,12 @@ public class StudentMain {
   void run() {
     karl.setGrades(giveGrades());
     System.out.println(karl);
-
-  }
-
-  public int readGrades() {
-    Scanner sc = new Scanner(System.in);
-    int grade = sc.nextInt();
-    return grade;
   }
 
   public int[] giveGrades() {
 
     int[] temp = new int[7];
-
+    Scanner sc = new Scanner(System.in);
     System.out.println("Kan kun modtage -3, 00, 2, 4, 7, 10 og 12");
     int input = 0;
     boolean valid = false;
@@ -28,7 +22,7 @@ public class StudentMain {
     for (int i = 0; i < temp.length; i++) {
       valid = false;
       while (!valid) {
-        input = readGrades();
+        input = sc.nextInt();
         switch (input) {
           case -3, 0, 2, 4, 7, 10, 12:
             temp[i] = input;
@@ -58,11 +52,8 @@ public class StudentMain {
       totalGrade = 12;
     }
       temp[5] = (int) totalGrade;
-    return temp;
-  }
-
-  public void splitGrade(int[] temp) {
-
+   int[] temp2 = Arrays.copyOf(temp, temp.length-1);
+    return temp2;
   }
 
   public static void main(String[] args) {
