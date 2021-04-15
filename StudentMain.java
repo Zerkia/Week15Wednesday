@@ -4,35 +4,40 @@ import java.util.Arrays;
 import java.util.Scanner;
 
 public class StudentMain {
-  Student karl = new Student("Karl", null);
+  Student karl = new Student("Jens", null);
 
   void run() {
     karl.setGrades(giveGrades());
     System.out.println(karl);
+    System.out.println();
   }
 
-  public int[] giveGrades() {
-
-    int[] temp = new int[8];
+  public int readGrades(){
     Scanner sc = new Scanner(System.in);
-    System.out.println("Kan kun modtage -3, 00, 2, 4, 7, 10 og 12");
-    int input = 0;
-    boolean valid = false;
+    int input = sc.nextInt();
+    return input;
+  }
 
-    for (int i = 0; i < temp.length; i++) {
-      valid = false;
-      while (!valid) {
-        input = sc.nextInt();
-        switch (input) {
-          case -3, 0, 2, 4, 7, 10, 12:
-            temp[i] = input;
-            valid = true;
-            break;
-          default:
-            System.out.println("Kan kun modtage -3, 00, 2, 4, 7, 10 og 12");
+    public int[] giveGrades(){
+      int[] temp = new int[8];
+      System.out.println("Kan kun modtage -3, 00, 2, 4, 7, 10 og 12");
+      int input;
+      boolean valid = false;
+
+      for (int i = 0; i < temp.length; i++) {
+        valid = false;
+        while (!valid) {
+          input = readGrades();
+          switch (input) {
+            case -3, 0, 2, 4, 7, 10, 12:
+              temp[i] = input;
+              valid = true;
+              break;
+            default:
+              System.out.println("Kan kun modtage -3, 00, 2, 4, 7, 10 og 12");
+          }
         }
       }
-    }
 
     int writtenGrade = temp[6];
     int vocalGrade = temp[7];

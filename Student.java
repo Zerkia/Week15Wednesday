@@ -24,14 +24,9 @@ public class Student {
     this.grades = grades;
   }
 
-  public int[] getGrades() {
-    return grades;
-  }
-
   @Override
   public String toString() {
-    return "Name: " + name + "\n" +
-        "Grade: " + Arrays.toString(grades) +
-        "\nGrades: " + Arrays.toString(gradeCurve);
+    return "Student name: " + name + "\n" +
+        "Grade: " + Arrays.toString(grades);
   }
 }
